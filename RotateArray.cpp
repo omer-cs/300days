@@ -20,18 +20,18 @@ void reverseArray(vector<int>& arr, int left, int right) {
 
 void leftRotateArray(vector<int> &arr, int k) {
 	k %= arr.size();
-	int n = arr.size()-1;
-	reverseArray(arr, 0, n);
-	reverseArray(arr, k, arr.size()-1);
+	int n = arr.size();
+	reverseArray(arr, 0, n-1);
+	reverseArray(arr, k, n-1);
 	reverseArray(arr, 0, k-1);
 }
 
 void rightRotateArray(vector<int> &arr, int k) {
 	k %= arr.size();
-	int n = arr.size()-1;
-	reverseArray(arr, 0, n);
+	int n = arr.size();
+	reverseArray(arr, 0, n-1);
 	reverseArray(arr, 0, k-1);
-	reverseArray(arr, k, n);
+	reverseArray(arr, k, n-1);
 }
 
 void rotateIterative(vector<int> &arr, int k) {
